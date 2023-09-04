@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 """Type-anotated add function."""
 
 

@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 """Type-annotated function sum_mixed_list."""
 
 
