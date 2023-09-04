@@ -6,12 +6,9 @@ import asyncio
 from typing import List
 
 
-wait_n = __import__('1-concurrent_coroutines').wait_n
+task_wait_random = __import__('3-tasks').task_wait_random
 
-
-def task_wait_n(n: int, max_delay: int) -> List[float]:
-    """Returns the list of all the delays."""
-    start_time = asyncio.get_event_loop().time()
-    delays = asyncio.run(wait_n(n, max_delay))
-    total_time = asyncio.get_event_loop().time() - start_time
-    return [total_time / n for i in range(n)]
+async def task_wait_n(n: int, max_delay: int) -> List[float]:
+    """Returns a list of delays in ascending order."""
+    delays = [task_wait_random(max_delay) for i in range(n)]
+    return [await delay for delay in asyncio.as_completed(delays)]
