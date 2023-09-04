@@ -1,4 +1,4 @@
-"""Type-anotated functions."""
+"""Type-anotated add function."""
 
 
 def add(a: float, b: float) -> float:
