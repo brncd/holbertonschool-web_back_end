@@ -11,18 +11,14 @@ class HolbertonCourse {
     }
   }
 
-  get name() {
-    return this._name;
-  }
-
   set name(name) {
     if (typeof name === 'string') {
       this._name = name;
     }
   }
 
-  get length() {
-    return this._length;
+  get name() {
+    return this._name;
   }
 
   set length(length) {
@@ -31,13 +27,17 @@ class HolbertonCourse {
     }
   }
 
-  get students() {
-    return this._students;
+  get length() {
+    return this._length;
   }
 
   set students(students) {
     if (Array.isArray(students)) {
       this._students = students;
     }
+  }
+
+  get students() {
+    return this._students;
   }
 }
